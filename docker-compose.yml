@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  actualbudget:
+    image: actualbudget/actual-server:alpine-latest
+    ports:
+      - "5006:5006"
+    volumes:
+      - actual_data:/data
+    environment:
+      - NODE_ENV=production
+
+volumes:
+  actual_data:
