@@ -11,14 +11,20 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    networks:
+      - internal
+
   actual_server:
     image: ghcr.io/actualbudget/actual-server:latest-alpine
-    ports:
-      - "5006:5006"
     volumes:
       - actual_data:/data
     environment:
       - NODE_ENV=production
+    networks:
+      - internal
+networks:
+  internal:
+    driver: bridge
 
 volumes:
   actual_data:
