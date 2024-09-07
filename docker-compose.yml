@@ -1,7 +1,17 @@
 version: "3.8"
 
 services:
-  actualbudget:
+  caddy:
+    container_name: caddy
+    image: caddy:alpine
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./caddy/data:/data
+      - ./caddy/config:/config
+    ports:
+      - "80:80"
+      - "443:443"
+  actual_server:
     image: ghcr.io/actualbudget/actual-server:latest-alpine
     ports:
       - "5006:5006"
