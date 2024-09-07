@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   actualbudget:
-    image: actualbudget/actual-server:alpine-latest
+    image: ghcr.io/actualbudget/actual-server:latest-alpine
     ports:
       - "5006:5006"
     volumes:
