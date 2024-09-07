@@ -1,4 +1,4 @@
-192.168.1.100 {
+192.168.1.100:443 {
     encode gzip zstd
-    reverse_proxy actual_server:5006
+    reverse_proxy localhost:5006
 }
