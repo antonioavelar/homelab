@@ -1,3 +1,7 @@
+{
+    debug
+}
+
 192.168.1.100:80 {
     reverse_proxy localhost:5006
 }
